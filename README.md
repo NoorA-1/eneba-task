@@ -10,9 +10,6 @@ Web application with search functionality built with React and Node.js.
 
 ## Running locally
 
-npm run dev:server
-npm run dev:client
-
 ### Prerequisites
 
 - Node.js 18+
@@ -22,3 +19,9 @@ npm run dev:client
 ```bash
 npm run install:all
 ```
+
+### Running server and client
+
+````npm run dev:server
+npm run dev:client```
+````
