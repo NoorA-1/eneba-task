@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Game {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  coverUrl String
+  listings Listing[]
+}
+
+model Listing {
+  id           String  @id @default(cuid())
+  title        String
+  platform     String
+  region       String
+  priceCurrent Decimal
+  priceOld     Decimal?
+  discountPct  Int?
+  cashback     Decimal?
+  likes        Int      @default(0)
+
+  gameId String
+  game   Game   @relation(fields: [gameId], references: [id])
+
+  @@index([gameId])
+}
