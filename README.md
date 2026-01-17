@@ -22,6 +22,7 @@ npm run install:all
 
 ### Running server and client
 
-````npm run dev:server
-npm run dev:client```
-````
+```bash
+npm run dev:server
+npm run dev:client
+```
