@@ -22,17 +22,26 @@ async function main() {
       {
         name: "FIFA 23",
         slug: "fifa-23",
-        coverUrl: "https://via.placeholder.com/600x800?text=FIFA+23",
+        coverUrl:
+          "https://cdn2.steamgriddb.com/thumb/51e0f86b7cb74096e922bd52653bd235.png",
       },
       {
         name: "Red Dead Redemption 2",
         slug: "red-dead-redemption-2",
-        coverUrl: "https://via.placeholder.com/600x800?text=RDR2",
+        coverUrl:
+          "https://cdn2.steamgriddb.com/thumb/3940304b536796dcc176aa83203a3955.jpg",
       },
       {
         name: "Split Fiction",
         slug: "split-fiction",
-        coverUrl: "https://via.placeholder.com/600x800?text=Split+Fiction",
+        coverUrl:
+          "https://cdn2.steamgriddb.com/thumb/04d1d8dde8e718c0f82d2d7f0157a572.jpg",
+      },
+      {
+        name: "Minecraft",
+        slug: "minecraft",
+        coverUrl:
+          "https://cdn2.steamgriddb.com/thumb/ee897a8699b37568c5c8dd72f78c2bf1.jpg",
       },
     ],
   });
@@ -101,6 +110,17 @@ async function main() {
         discountPct: 67,
         cashback: "1.25",
         likes: 2400,
+      },
+      {
+        gameId: bySlug["minecraft"].id,
+        title: "Minecraft (PC) Mojang Key GLOBAL",
+        platform: "Mojang",
+        region: "GLOBAL",
+        priceCurrent: "9.99",
+        priceOld: "19.99",
+        discountPct: 50,
+        cashback: "4.00",
+        likes: 1800,
       },
     ],
   });
