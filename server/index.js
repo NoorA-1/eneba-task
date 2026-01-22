@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const { prisma } = require("./prismaClient");
 
 const app = express();
@@ -31,7 +32,6 @@ app.get("/list", async (req, res) => {
       take: 50,
     });
 
-    // Convert Decimal fields to string for safe JSON
     const items = listings.map((l) => ({
       ...l,
       priceCurrent: l.priceCurrent.toString(),
@@ -44,6 +44,13 @@ app.get("/list", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
+});
+
+const clientDistPath = path.resolve(__dirname, "../client/dist");
+app.use(express.static(clientDistPath));
+
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(clientDistPath, "index.html"));
 });
 
 const PORT = process.env.PORT || 3001;

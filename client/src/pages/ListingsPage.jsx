@@ -21,10 +21,11 @@ export default function ListingsPage() {
       setErrorText("");
 
       try {
+        const base = import.meta.env.VITE_API_URL || "";
         const url =
           debouncedQuery.trim().length > 0
-            ? `${API_URL}/list?search=${encodeURIComponent(debouncedQuery.trim())}`
-            : `${API_URL}/list`;
+            ? `${base}/list?search=${encodeURIComponent(debouncedQuery.trim())}`
+            : `${base}/list`;
 
         const res = await fetch(url);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
