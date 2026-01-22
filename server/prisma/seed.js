@@ -13,7 +13,6 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
-  // Clean start (nice for dev)
   await prisma.listing.deleteMany();
   await prisma.game.deleteMany();
 
@@ -37,12 +36,12 @@ async function main() {
         coverUrl:
           "https://cdn2.steamgriddb.com/thumb/04d1d8dde8e718c0f82d2d7f0157a572.jpg",
       },
-      {
-        name: "Minecraft",
-        slug: "minecraft",
-        coverUrl:
-          "https://cdn2.steamgriddb.com/thumb/ee897a8699b37568c5c8dd72f78c2bf1.jpg",
-      },
+      // {
+      //   name: "Minecraft",
+      //   slug: "minecraft",
+      //   coverUrl:
+      //     "https://cdn2.steamgriddb.com/thumb/ee897a8699b37568c5c8dd72f78c2bf1.jpg",
+      // },
     ],
   });
 
@@ -51,7 +50,6 @@ async function main() {
 
   await prisma.listing.createMany({
     data: [
-      // Split Fiction (multiple like screenshot)
       {
         gameId: bySlug["split-fiction"].id,
         title: "Split Fiction EA App Key (PC) GLOBAL",
@@ -86,7 +84,6 @@ async function main() {
         likes: 1039,
       },
 
-      // FIFA 23
       {
         gameId: bySlug["fifa-23"].id,
         title: "FIFA 23 (PC) EA App Key GLOBAL",
@@ -99,7 +96,6 @@ async function main() {
         likes: 1200,
       },
 
-      // RDR2
       {
         gameId: bySlug["red-dead-redemption-2"].id,
         title: "Red Dead Redemption 2 (PC) Rockstar Key GLOBAL",
@@ -111,17 +107,17 @@ async function main() {
         cashback: "1.25",
         likes: 2400,
       },
-      {
-        gameId: bySlug["minecraft"].id,
-        title: "Minecraft (PC) Mojang Key GLOBAL",
-        platform: "Mojang",
-        region: "GLOBAL",
-        priceCurrent: "9.99",
-        priceOld: "19.99",
-        discountPct: 50,
-        cashback: "4.00",
-        likes: 1800,
-      },
+      // {
+      //   gameId: bySlug["minecraft"].id,
+      //   title: "Minecraft (PC) Mojang Key GLOBAL",
+      //   platform: "Mojang",
+      //   region: "GLOBAL",
+      //   priceCurrent: "9.99",
+      //   priceOld: "19.99",
+      //   discountPct: 50,
+      //   cashback: "4.00",
+      //   likes: 1800,
+      // },
     ],
   });
 
