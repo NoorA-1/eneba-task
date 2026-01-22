@@ -46,7 +46,7 @@ app.get("/list", async (req, res) => {
   }
 });
 
-const clientDistPath = path.resolve(__dirname, "../client/dist");
+const clientDistPath = path.resolve(__dirname, "public");
 app.use(express.static(clientDistPath));
 
 app.get(/.*/, (req, res) => {
