@@ -1,3 +1,7 @@
 node_modules
 .env
+<<<<<<< HEAD
+=======
+misc.md
+>>>>>>> 636162d816000832e3acdc2b0517be5f38c9cec5
 /generated/prisma

@@ -1,7 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+<<<<<<< HEAD
 const path = require("path");
+=======
+>>>>>>> 636162d816000832e3acdc2b0517be5f38c9cec5
 const { prisma } = require("./prismaClient");
 
 const app = express();
