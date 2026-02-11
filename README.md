@@ -14,10 +14,14 @@ Web application with search functionality built with React and Node.js.
 
 - Node.js 18+
 
-### Environment Variables (server/.env)
+### Environment Variables
 
 ```bash
+For server/.env
 DATABASE_URL="connection-string"
+
+For client/.env
+VITE_API_URL="http://localhost:3001"
 ```
 
 ### Install dependencies
