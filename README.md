@@ -14,6 +14,12 @@ Web application with search functionality built with React and Node.js.
 
 - Node.js 18+
 
+### Enivornment Variables (server/.env)
+
+```bash
+DATABASE_URL="connection-string"
+```
+
 ### Install dependencies
 
 ```bash

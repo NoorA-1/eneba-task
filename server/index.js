@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const { prisma } = require("./prismaClient");
+const fs = require("fs");
 
 const app = express();
 app.use(cors());
@@ -46,11 +47,21 @@ app.get("/list", async (req, res) => {
   }
 });
 
-const clientDistPath = path.resolve(__dirname, "public");
-app.use(express.static(clientDistPath));
+const publicPath = path.resolve(__dirname, "public");
+const indexHtml = path.join(publicPath, "index.html");
+
+if (fs.existsSync(indexHtml)) {
+  app.use(express.static(publicPath));
+  app.get(/.*/, (req, res) => res.sendFile(indexHtml));
+} else {
+  console.warn(
+    `No frontend build found at ${indexHtml}. Running API-only. ` +
+      `For UI, run the client dev server or build the client.`,
+  );
+}
 
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(clientDistPath, "index.html"));
+  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 const PORT = process.env.PORT || 3001;
